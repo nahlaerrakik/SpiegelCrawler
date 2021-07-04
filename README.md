@@ -55,9 +55,9 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
         
    Connection tab:
    
-       - Host name/address: copy past the db container's IP address. To retrieve the container's IP address, enter the following command line:
-       
-            `docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" spiegel_db`
+       - Host name/address: copy past the db container's IP address. 
+         To retrieve the container's IP address, enter the following command line:   
+            docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" spiegel_db
        
        - Port: 5432
        - Maintenance database: postgres
