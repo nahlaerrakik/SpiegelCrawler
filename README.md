@@ -7,20 +7,20 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
 - Docker Compose: If you are using Windows or Mac OS, no need to install Docker Compose, since it is included with Docker. However, if you are using Linux, please refer to the installation documentation https://docs.docker.com/compose/install/
 
 # How to install
-1)  Download project or clone this repository using:
+1)  Download and unzip project or clone this repository using:
     
     ```sh
     git clone https://github.com/nahlaerrakik/SpiegelCrawler.git
     ```
     
-2)  Open the `Command Prompt` on your local machine and execute the following commands. Make sur you are at the root of the project:
+2)  Open the `Command Prompt` on your local machine and execute the following commands. Make sure you are at the root of the project:
     
     ```sh
     cd SpiegelCrawler
     docker compose up --build -d
     ```
     
-    The installation may take some time to finish. Once finished, the crawler will be triggered and start crawling the website https://www.spiegel.de/international/
+    The installation may take some time to finish. Once finished, the crawler will be triggered and it will start crawling the website https://www.spiegel.de/international/
     
     To stop the application, enter the following command:
     ```sh
@@ -29,7 +29,7 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
 
 
 # How to visualize data
-1) If you stopped the containers at some point, make sure the db and pgadmin containers are up and running:
+1) If you stopped the containers at some point, make sure the spiegel_db and spiegel_pgadmin containers are up and running:
    ```sh
    docker container start spiegel_db
    docker container start spiegel_pgadmin
@@ -42,7 +42,7 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
    
    ![](static/img/4.PNG)
    
-3) Click on a "Add New Server"
+3) Click on "Add New Server"
    ![](static/img/1.PNG)
    
 4) Add the database server by completing the forms with the following inputs:
@@ -55,7 +55,7 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
         
    Connection tab:
    
-       - Host name/address: copy past the db container's ip address. To retrieve the container's ip address, enter the following command line:
+       - Host name/address: copy past the db container's IP address. To retrieve the container's IP address, enter the following command line:
        
             `docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" spiegel_db`
        
@@ -67,7 +67,7 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
        
    ![](static/img/2.PNG)
    
-5) Using the right navigation bar, go to articles tables using Servers -> spiegel_crawler -> Databases -> crawler -> Schemas -> public -> Tables -> articles
+5) Using the right navigation bar, go to articles tables using Servers -> crawler_db -> Databases -> crawler -> Schemas -> public -> Tables -> articles
    right-click on articles and select View/Edit Data -> All Rows
    
    ![](static/img/3.PNG)
