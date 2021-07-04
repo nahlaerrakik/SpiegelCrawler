@@ -67,7 +67,7 @@ The crawler was developed using python, the scrapy framework and Postgresql as a
        
    ![](static/img/2.PNG)
    
-5) Using the right navigation bar, go to articles tables using Servers -> crawler_db -> Databases -> crawler -> Schemas -> public -> Tables -> articles
+5) Using the right navigation bar, go to articles tables using Servers -> crawler_db -> Databases -> crawler -> Schemas -> public -> Tables -> articles,
    right-click on articles and select View/Edit Data -> All Rows
    
    ![](static/img/3.PNG)
