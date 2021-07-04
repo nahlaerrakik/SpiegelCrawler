@@ -1,0 +1,38 @@
+version: '3'
+services:
+  spiegel_crawler:
+    container_name: spiegel_crawler
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  spiegel_db:
+    image: postgres:latest
+    container_name: spiegel_db
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: crawler
+    expose:
+      - '5432'
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  spiegel_pgadmin:
+    image: dpage/pgadmin4
+    container_name: spiegel_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - '5050:80'
+
