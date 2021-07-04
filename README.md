@@ -1,5 +1,5 @@
 # Spiegel Web Crawler
-This is an application that crawls the Spiegel website and stores news article in a database.
+This is an application that crawls the Spiegel website and stores news articles in a database.
 The crawler was developed using python, the scrapy framework and Postgresql as a main database to store the data.
 
 # Prerequisite
